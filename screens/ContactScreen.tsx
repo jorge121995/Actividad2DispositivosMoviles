@@ -11,6 +11,8 @@ export default function ContactScreen({ navigation }) {
   const [historialFormularios, setHistorialFormularios] = useState([]);
 
   //creacion de formulario 
+  //COMENTARIO IMPORTANTE: TODOS LOS INTEGRANTES DEL GRUPO HEMOS COLABORADO
+  //POR PROBLEMAS TECNICOS SE HA TRABAJADO DE FORMA FISICA EN UNA SOLA MAQUINA
   
   const handleEnviarFormulario = () => {
     if (!nombre || !apellido || !telefono || !email) {
