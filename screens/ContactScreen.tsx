@@ -7,13 +7,13 @@ export default function ContactScreen({ navigation }) {
   const [nombre, setNombre] = useState('');
   const [apellido, setApellido] = useState('');
   const [telefono, setTelefono] = useState('');
-  const [correo, setCorreo] = useState('');
+  const [email, setemail] = useState('');
   const [historialFormularios, setHistorialFormularios] = useState([]);
 
   //creacion de formulario 
   
   const handleEnviarFormulario = () => {
-    if (!nombre || !apellido || !telefono || !correo) {
+    if (!nombre || !apellido || !telefono || !email) {
       Alert.alert('Error', 'Por favor, complete todos los campos.');
       return;
     }
@@ -22,7 +22,7 @@ export default function ContactScreen({ navigation }) {
       nombre,
       apellido,
       telefono,
-      correo,
+      email,
     };
 
     setHistorialFormularios([...historialFormularios, nuevoFormulario]);
@@ -38,7 +38,7 @@ export default function ContactScreen({ navigation }) {
             setNombre('');
             setApellido('');
             setTelefono('');
-            setCorreo('');
+            setemail('');
           },
         },
         {
@@ -75,9 +75,9 @@ export default function ContactScreen({ navigation }) {
         style={styles.input}
       />
       <TextInput
-        label="Correo Electrónico"
-        value={correo}
-        onChangeText={(text) => setCorreo(text)}
+        label="email Electrónico"
+        value={email}
+        onChangeText={(text) => setemail(text)}
         keyboardType="email-address"
         style={styles.input}
       />
@@ -90,7 +90,7 @@ export default function ContactScreen({ navigation }) {
         <Text style={styles.historialTitulo}>Historial de Formularios</Text>
         {historialFormularios.map((formulario, index) => (
           <Text key={index} style={styles.historialItem}>
-            {`Registro ${index + 1}: ${formulario.nombre} ${formulario.apellido}, Teléfono: ${formulario.telefono}, Correo: ${formulario.correo}`}
+            {`Registro ${index + 1}: ${formulario.nombre} ${formulario.apellido}, Teléfono: ${formulario.telefono}, email: ${formulario.email}`}
           </Text>
         ))}
       </View>
