@@ -10,6 +10,8 @@ export default function ContactScreen({ navigation }) {
   const [correo, setCorreo] = useState('');
   const [historialFormularios, setHistorialFormularios] = useState([]);
 
+  //creacion de formulario 
+  
   const handleEnviarFormulario = () => {
     if (!nombre || !apellido || !telefono || !correo) {
       Alert.alert('Error', 'Por favor, complete todos los campos.');
